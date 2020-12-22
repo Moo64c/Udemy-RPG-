@@ -7,6 +7,11 @@ public class DialogueActivator : MonoBehaviour
 
     public string[] lines;
     public bool isPerson = true;
+    
+    [Header("Quest")]
+    public bool shouldActivateQuest;
+    public bool markComplete;
+    public string questToMark;
 
     private bool canActivate = false;
 
@@ -15,6 +20,7 @@ public class DialogueActivator : MonoBehaviour
         if (canActivate && Input.GetButtonDown("Fire1"))
         {
             DialogueManager.instance.ShowDialogue(lines, isPerson);
+            DialogueManager.instance.ShouldActivateQuestAtEnd(questToMark, markComplete);
             canActivate = false;
         }
     }

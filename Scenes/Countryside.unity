@@ -191,7 +191,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1752591181
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -4351,6 +4351,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.9375
       objectReference: {fileID: 0}
+    - target: {fileID: 2121668810, guid: e3c274a879e624c2aa0dd9dc44af016c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 3045970548760749259, guid: e3c274a879e624c2aa0dd9dc44af016c,
         type: 3}
       propertyPath: areaTransitionName
@@ -4360,10 +4364,6 @@ PrefabInstance:
         type: 3}
       propertyPath: areaToLoad
       value: Town
-      objectReference: {fileID: 0}
-    - target: {fileID: 2121668810, guid: e3c274a879e624c2aa0dd9dc44af016c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3c274a879e624c2aa0dd9dc44af016c, type: 3}
@@ -4553,6 +4553,11 @@ PrefabInstance:
       propertyPath: currentMap
       value: 
       objectReference: {fileID: 1996643246}
+    - target: {fileID: 6173823036645215325, guid: 176788f1ae8de49c0bbb94b0b700d4e5,
+        type: 3}
+      propertyPath: musicTrackToPlay
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6173823036645215324, guid: 176788f1ae8de49c0bbb94b0b700d4e5,
         type: 3}
       propertyPath: m_BackGroundColor.r
@@ -4638,7 +4643,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1752591181
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}

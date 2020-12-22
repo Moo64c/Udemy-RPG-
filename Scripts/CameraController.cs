@@ -9,10 +9,14 @@ public class CameraController : MonoBehaviour
     public Transform target;
     public Tilemap currentMap;
 
+    public int musicTrackToPlay;
+
     private Vector3 bottomLeftLimit;
     private Vector3 topRightLimit;
     private float halfHeight;
     private float halfWidth;
+
+    private bool musicStarted;
 
     void Start()
     {
@@ -40,5 +44,11 @@ public class CameraController : MonoBehaviour
             Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y),
             transform.position.z
         );
+
+        if (!musicStarted)
+        {
+            AudioManager.instance.PlayBackgroundMusic(musicTrackToPlay);
+            musicStarted = true;
+        }
     }
 }

@@ -21,6 +21,7 @@ public class GameMenu : MonoBehaviour
     public Slider[] experienceSliders = new Slider[3];
     public Image[] characterImage = new Image[3];
     public GameObject[] characterStatHolder = new GameObject[3];
+    public Text goldAmountText;
 
     // Status window.
     [Header("Status Window")]
@@ -60,6 +61,7 @@ public class GameMenu : MonoBehaviour
                 GameManager.instance.gameMenuOpen = true;
                 theMenu.SetActive(true);
             }
+            AudioManager.instance.PlaySoundEffect(5);
         }
     }
 
@@ -87,6 +89,8 @@ public class GameMenu : MonoBehaviour
                 characterStatHolder[index].SetActive(false);
             }
         }
+
+        goldAmountText.text = GameManager.instance.currentGold + "g";
     }
 
     public void ToggleWindow(int windowNumber)
@@ -103,6 +107,7 @@ public class GameMenu : MonoBehaviour
             }
         }
         itemCharacterSelectionPanel.SetActive(false);
+        PlayButtonSound();
     }
 
     public void CloseMenu()
@@ -142,8 +147,8 @@ public class GameMenu : MonoBehaviour
 
         statusWeaponPower.text  = playerStat.weaponPower.ToString();
         statusArmorPower.text   = playerStat.armorPower.ToString();
-        statusWeaponEquipped.text   = playerStat.equippedWeapon != "" ? "-" : playerStat.equippedWeapon;
-        statusArmorEquipped.text    = playerStat.equippedArmor  != "" ? "-" : playerStat.equippedArmor;
+        statusWeaponEquipped.text   = playerStat.equippedWeapon == "" ? "-" : playerStat.equippedWeapon;
+        statusArmorEquipped.text    = playerStat.equippedArmor  == "" ? "-" : playerStat.equippedArmor;
 
         statusExperience.text = (playerStat.experienceToNextLevel[playerStat.playerLevel - 1] - playerStat.currentExperience).ToString();
 
@@ -201,5 +206,22 @@ public class GameMenu : MonoBehaviour
     public void CloseCharacterChoice()
     {
         itemCharacterSelectionPanel.SetActive(false);
+    }
+
+    public void UseItem(int selectedCharacter)
+    {
+        activeItem.Use(selectedCharacter);
+        CloseCharacterChoice();
+    }
+
+    public void SaveGame()
+    {
+        GameManager.instance.SaveData();
+        QuestsManager.instance.SaveQuestData();
+    }
+
+    public void PlayButtonSound()
+    {
+        AudioManager.instance.PlaySoundEffect(4);
     }
 }

@@ -25,13 +25,57 @@ public class Item : MonoBehaviour
     public int weaponStrength;
     public int armorStrength;
 
-    void Start()
+    public void Use(int characterToUseOn)
     {
-        
-    }
+        CharacterStats selectedCharacter = GameManager.instance.playerStats[characterToUseOn];
 
-    void Update()
-    {
+        if (isItem)
+        {
+            if (affectHP)
+            {
+                selectedCharacter.currentHealthPoints += amountToChange;
+                if (selectedCharacter.currentHealthPoints > selectedCharacter.maxHealthPoints)
+                {
+                    selectedCharacter.currentHealthPoints = selectedCharacter.maxHealthPoints;
+                }
+            }
+
+            if (affectMP)
+            {
+                selectedCharacter.currentMagicPoints += amountToChange;
+                if (selectedCharacter.currentMagicPoints > selectedCharacter.maxMagicPoints)
+                {
+                    selectedCharacter.currentMagicPoints = selectedCharacter.maxMagicPoints;
+                }
+            }
+
+            if (affectStrength)
+            {
+                selectedCharacter.strength += amountToChange;
+            }
+
+        }
         
+        if (isWeapon)
+        {
+            if (selectedCharacter.equippedWeapon != "")
+            {
+                GameManager.instance.AddItem(selectedCharacter.equippedWeapon);
+            }
+            selectedCharacter.equippedWeapon = itemName;
+            selectedCharacter.weaponPower = weaponStrength;
+        }
+        
+        if (isArmor) {
+            Debug.Log("is armor!");
+            if (selectedCharacter.equippedArmor != "")
+            {
+                GameManager.instance.AddItem(selectedCharacter.equippedArmor);
+            }
+            selectedCharacter.equippedArmor = itemName;
+            selectedCharacter.armorPower = armorStrength;
+        }
+
+        GameManager.instance.RemoveItem(itemName);
     }
 }

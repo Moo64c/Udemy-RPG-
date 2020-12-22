@@ -59,6 +59,7 @@ MonoBehaviour:
   equippedWeapon: 
   equippedArmor: 
   characterImage: {fileID: 21300000, guid: e0ddba6d3fcf21f49949fcc95c849aac, type: 3}
+  experienceToNextLevel: 
 --- !u!1 &3266305057131963702
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,6 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3266305057131963704}
   - component: {fileID: 3266305057131963705}
+  - component: {fileID: 1514497291}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -109,6 +111,80 @@ MonoBehaviour:
   - {fileID: 3266305057687424672}
   - {fileID: 3266305056874207929}
   - {fileID: 3266305057145057722}
+  gameMenuOpen: 0
+  dialogueActive: 0
+  fadingBetweenAreas: 0
+  shopActive: 0
+  itemsHeld:
+  - Health Potion
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Iron Sword
+  - 
+  - 
+  - 
+  - Iron Armor
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Mana Potion
+  - 
+  - 
+  - 
+  - 
+  - Leather Armor
+  - 
+  - 
+  - 
+  - 
+  - 
+  numberOfItems: 05000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000010000000000000000000000000000000000000000000000
+  referenceItems:
+  - {fileID: 5765985629479824454, guid: ff99441584410ff43809c16c1e7c24bc, type: 3}
+  - {fileID: 4498332632306586914, guid: bb4f42f1b67cc4546a7c3318cd97c42d, type: 3}
+  - {fileID: 3649306260633612357, guid: 8a4edb23830948a4fad3a7798db6ccb9, type: 3}
+  - {fileID: 1817454657286655730, guid: 38c91656091d8104b9cacacf46586291, type: 3}
+  - {fileID: 4604409448371872965, guid: 43cacbd521851ae43b6f3ecea73cf71b, type: 3}
+  - {fileID: 5009759542581917458, guid: 15df7b67f55b6e24494246b5705b073c, type: 3}
+  currentGold: 0
+--- !u!114 &1514497291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3266305057131963702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a82fca5d9449434428ccc4ae38c230e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questMarkerNames:
+  - 
+  - Fight the demon
+  - Enter the cave
+  - Quest test
+  - Save the world
+  - Load test
+  questMarkersComplete: 0000000000
 --- !u!1 &3266305057145057720
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,6 +244,7 @@ MonoBehaviour:
   equippedWeapon: 
   equippedArmor: 
   characterImage: {fileID: 21300000, guid: e0ddba6d3fcf21f49949fcc95c849aac, type: 3}
+  experienceToNextLevel: 
 --- !u!1 &3266305057687424673
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,4 +303,6 @@ MonoBehaviour:
   armorPower: 0
   equippedWeapon: 
   equippedArmor: 
-  characterImage: {fileID: 0}
+  characterImage: {fileID: 7152930139536384079, guid: 184a9dd61f39045d59a5235ed09a0ad7,
+    type: 3}
+  experienceToNextLevel: 
